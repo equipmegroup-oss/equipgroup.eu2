@@ -1,0 +1,126 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-hot: var(--hot);
+  --gradient-hero: var(--gradient-hero);
+  --gradient-brand: var(--gradient-brand);
+  --shadow-elegant: var(--shadow-elegant);
+  --shadow-card: var(--shadow-card);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette (from equip.me) */
+  --ink: #1E1E2D;
+  --ink-2: #282F48;
+  --brand: #3699FF;
+  --brand-soft: #9DCBFA;
+  --hot: #F64E60;
+
+  --background: #ffffff;
+  --foreground: #1E1E2D;
+  --card: #ffffff;
+  --card-foreground: #1E1E2D;
+  --popover: #ffffff;
+  --popover-foreground: #1E1E2D;
+  --primary: #3699FF;
+  --primary-foreground: #ffffff;
+  --secondary: #F4F6FB;
+  --secondary-foreground: #1E1E2D;
+  --muted: #F4F6FB;
+  --muted-foreground: #5B6478;
+  --accent: #EAF3FF;
+  --accent-foreground: #1E1E2D;
+  --destructive: #F64E60;
+  --destructive-foreground: #ffffff;
+  --border: #E5E9F2;
+  --input: #E5E9F2;
+  --ring: #3699FF;
+
+  --gradient-hero: radial-gradient(900px 500px at 85% -20%, rgba(54,153,255,0.08), transparent 65%), linear-gradient(180deg, #0E0E18 0%, #14172A 100%);
+  --gradient-brand: linear-gradient(135deg, #3699FF 0%, #9DCBFA 100%);
+  --shadow-elegant: 0 30px 80px -30px rgba(30, 30, 45, 0.35);
+  --shadow-card: 0 4px 24px -8px rgba(40, 47, 72, 0.10);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv11", "kern";
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-sans); letter-spacing: -0.035em; font-weight: 300; }
+  p { font-weight: 300; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .container-x { @apply mx-auto w-full max-w-7xl px-6 lg:px-10; }
+  .font-display { font-family: var(--font-sans); font-weight: 200; letter-spacing: -0.04em; }
+  .display-italic { font-family: var(--font-sans); font-weight: 200; letter-spacing: -0.04em; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 40s linear infinite; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise { animation: rise 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+
+  .hairline { background-image: linear-gradient(to right, rgba(255,255,255,0.18), transparent); height: 1px; }
+
+  .bg-grain {
+    background-image: radial-gradient(oklch(0.20 0.025 60 / 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+  .bg-grain-light {
+    background-image: radial-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+}
