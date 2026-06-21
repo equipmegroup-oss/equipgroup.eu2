@@ -1,7 +1,7 @@
 import logo from "@/assets/equipme-logo.png";
 
 
-const offices = ["Tallinn — HQ", "Zurich", "Bucharest", "Belgrade"];
+const offices = ["Tallinn — HQ", "Geneva", "Bucharest", "Belgrade"];
 const warehouses = ["Vilnius", "Athens", "Tbilisi", "USA"];
 
 export function Footer() {
@@ -71,8 +71,8 @@ export function Footer() {
             </div>
             <ul className="mt-5 space-y-3 text-[16px] font-light">
               <li>
-                <a href="mailto:hello@equipgroup.eu" className="text-white/85 hover:text-primary transition">
-                  hello@equipgroup.eu
+                <a href="mailto:sales@equip.me" className="text-white/85 hover:text-primary transition">
+                  sales@equip.me
                 </a>
               </li>
             </ul>
