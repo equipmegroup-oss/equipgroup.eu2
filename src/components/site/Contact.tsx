@@ -51,10 +51,10 @@ export function Contact() {
         <div className="mt-20 border-t border-white/10 pt-10 grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-5">
             <a
-              href="mailto:hello@equipgroup.eu"
+              href="mailto:sales@equip.me"
               className="group inline-flex items-baseline gap-3 text-[clamp(1.5rem,2.4vw,2.25rem)] font-light tracking-[-0.02em] text-white hover:text-primary transition"
             >
-              hello@equipgroup.eu
+              sales@equip.me
               <ArrowUpRight
                 className="h-5 w-5 transition group-hover:-translate-y-1 group-hover:translate-x-1"
                 strokeWidth={1.25}
